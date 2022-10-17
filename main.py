@@ -79,7 +79,7 @@ def auth():
     body = {'email': email, 'password': password}
 
     user_data = body
-
+    #_get_jwt returns encoded value whose type is byte. .decode('utf-8') changes it to string
     return jsonify(token=_get_jwt(user_data).decode('utf-8'))
 
 
